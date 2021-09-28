@@ -14,11 +14,9 @@ namespace ProjectTest.Data.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        [Column("user")]
         [StringLength(50)]
         public string User { get; set; }
         [Required]
-        [Column("password")]
         [StringLength(50)]
         public string Password { get; set; }
     }

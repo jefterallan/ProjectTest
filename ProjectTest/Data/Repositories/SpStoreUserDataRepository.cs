@@ -3,7 +3,6 @@ using ProjectTest.Data.Models;
 using ProjectTest.Data.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace ProjectTest.Data.Repositories

@@ -36,7 +36,7 @@ namespace ProjectTest.Data
             modelBuilder.Entity<TblUsersAuth>(entity =>
             {
                 entity.Property(e => e.Id).ValueGeneratedNever();
-
+                
                 entity.Property(e => e.Password).IsFixedLength(true);
 
                 entity.Property(e => e.User).IsFixedLength(true);

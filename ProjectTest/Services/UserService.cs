@@ -90,7 +90,7 @@ namespace ProjectTest.Services
         }
 
         public bool ValidateCredentials(string username, string password)
-        {
+        {//(admin) 0DPiKuNIrrVmD8IUCuw1hQxNqZc=
             return UserAuthRepository.ValidateCredentials(UsersAuthDto.NewUser(username, password));
         }
     }

@@ -22,12 +22,28 @@ namespace ProjectTest.Migrations
                 {
                     table.PrimaryKey("PK_TBL_USERS", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "TBL_USERS_AUTH",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    User = table.Column<string>(type: "nchar(50)", fixedLength: true, maxLength: 50, nullable: false),
+                    Password = table.Column<string>(type: "nchar(50)", fixedLength: true, maxLength: 50, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TBL_USERS_AUTH", x => x.Id);
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "TBL_USERS");
+
+            migrationBuilder.DropTable(
+                name: "TBL_USERS_AUTH");
         }
     }
 }

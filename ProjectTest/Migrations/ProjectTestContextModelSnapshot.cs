@@ -15,14 +15,14 @@ namespace ProjectTest.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.10")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ProjectTest.Data.Models.Users", b =>
+            modelBuilder.Entity("ProjectTest.Data.Models.TblUser", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Age")
@@ -49,6 +49,28 @@ namespace ProjectTest.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TBL_USERS");
+                });
+
+            modelBuilder.Entity("ProjectTest.Data.Models.TblUsersAuth", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nchar(50)")
+                        .IsFixedLength(true);
+
+                    b.Property<string>("User")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nchar(50)")
+                        .IsFixedLength(true);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TBL_USERS_AUTH");
                 });
 #pragma warning restore 612, 618
         }
